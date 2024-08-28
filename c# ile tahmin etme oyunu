@@ -1,0 +1,2631 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace İdaa
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<string> takım = new List<string> { "Fenerbahçe", "Galatasaray", "Beşiktaş", "Sivasspor", "Trabzonspor", "Adanaspor" };
+            int sira = 1;
+            Random skorlar = new Random();
+
+
+            foreach (string takımlar in takım)
+            {
+
+                Console.WriteLine($"{sira}. {takımlar}");
+                sira++;
+            }
+
+
+
+            int skor = skorlar.Next(10);
+            int skor2 = skorlar.Next(10);
+
+            while (true)
+            {
+                Console.WriteLine("Lütfen Yukardan Bir Kulüp Seçiniz.");
+                int kulüp_seçim = int.Parse(Console.ReadLine());
+
+                if (kulüp_seçim == 1)
+                {
+
+                    Console.WriteLine("1) Fenerbahçe - Galatasaray ");
+                    Console.WriteLine("2) Fenerbahçe - Adanaspor ");
+                    Console.WriteLine("3) Fenerbahçe - Sivasspor ");
+                    Console.WriteLine("4) Fenerbahçe - Beşiktaş ");
+                    Console.WriteLine("5) Fenerbahçe - Trabzonspor ");
+
+                    Console.WriteLine("Lütfen Oynamak İstediğiniz Maçı Seçiniz");
+                    int maç_seçimi = int.Parse(Console.ReadLine());
+
+                    if (maç_seçimi == 1)
+                    {
+                        Console.WriteLine("Fenerbahçe - Galatasaray");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Fenerbahçe - " + skor + " // " + "Galatasaray - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Fenerbahçe - " + skor + " // " + "Galatasaray - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Fenerbahçe - " + skor + " // " + "Galatasaray - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 2)
+                    {
+                        Console.WriteLine("Fenerbahçe - Adanaspor");
+                        Console.WriteLine("Bu  Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine("Fenerbahçe" + skor + " // " + "Adanaspor" + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine("Fenerbahçe" + skor + " // " + "Adanaspor" + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine("Fenerbahçe" + skor + " // " + "Adanaspor" + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 3)
+                    {
+                        Console.WriteLine("Fenerbahçe - Sivasspor");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Fenerbahçe - " + skor + " // " + "Sivasspor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Fenerbahçe - " + skor + " // " + "Sivasspor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Fenerbahçe - " + skor + " // " + "Sivasspor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 4)
+                    {
+                        Console.WriteLine("Fenerbahçe - Beşiktaş");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Fenerbahçe - " + skor + " // " + "Beşiktaş - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Fenerbahçe - " + skor + " // " + "Beşiktaş- " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Fenerbahçe - " + skor + " // " + "Beşiktaş - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 5)
+                    {
+                        Console.WriteLine("Fenerbahçe - Trabzonspor");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Fenerbahçe - " + skor + " // " + "Trabzonspor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Fenerbahçe - " + skor + " // " + "Trabzospor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Fenerbahçe - " + skor + " // " + "Trabzonspor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                }
+
+                else if (kulüp_seçim == 2)
+                {
+                    Console.WriteLine("1) Galatasaray - Fenerbahçe ");
+                    Console.WriteLine("2) Galatasaray - Adanaspor ");
+                    Console.WriteLine("3) Galatasaray - Sivasspor ");
+                    Console.WriteLine("4) Galatasaray - Beşiktaş ");
+                    Console.WriteLine("5) Galatasaray - Trabzonspor ");
+
+                    Console.WriteLine("Lütfen Oynamak İstediğiniz Maçı Seçiniz");
+                    int maç_seçimi = int.Parse(Console.ReadLine());
+
+                    if (maç_seçimi == 1)
+                    {
+                        Console.WriteLine("Galatasaray - Fenerbahçe");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Galatasaray - " + skor + " // " + "Fenerbahçe - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Galatasaray - " + skor + " // " + "Fenerbahçe - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Galatasaray - " + skor + " // " + "Fenerbahçe - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 2)
+                    {
+                        Console.WriteLine("Galatasaray - Adanaspor");
+                        Console.WriteLine("Bu  Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine("Galatasaray" + skor + " // " + "Adanaspor" + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine("Galatasaray" + skor + " // " + "Adanaspor" + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine("Galatasaray" + skor + " // " + "Adanaspor" + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 3)
+                    {
+                        Console.WriteLine("Galatasaray - Sivasspor");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Galatasaray - " + skor + " // " + "Sivasspor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Galatasaray - " + skor + " // " + "Sivasspor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Galatasaray - " + skor + " // " + "Sivasspor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 4)
+                    {
+                        Console.WriteLine("Galatasaray - Beşiktaş");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Galatasaray - " + skor + " // " + "Beşiktaş - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Galatasaray - " + skor + " // " + "Beşiktaş- " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Galatasaray - " + skor + " // " + "Beşiktaş - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 5)
+                    {
+                        Console.WriteLine("Fenerbahçe - Trabzonspor");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Galatasaray - " + skor + " // " + "Trabzonspor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Galatasaray - " + skor + " // " + "Trabzospor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Galatasaray - " + skor + " // " + "Trabzonspor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                else if (kulüp_seçim == 3)
+                {
+                    Console.WriteLine("1) Beşiktaş - Fenerbahçe ");
+                    Console.WriteLine("2) Beşiktaş - Adanaspor ");
+                    Console.WriteLine("3) Beşiktaş - Sivasspor ");
+                    Console.WriteLine("4) Beşiktaş - Galatasaray ");
+                    Console.WriteLine("5) Beşiktaş - Trabzonspor ");
+
+                    Console.WriteLine("Lütfen Oynamak İstediğiniz Maçı Seçiniz");
+                    int maç_seçimi = int.Parse(Console.ReadLine());
+
+                    if (maç_seçimi == 1)
+                    {
+                        Console.WriteLine("Beşiktaş - Fenerbahçe");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Beşiktaş - " + skor + " // " + "Fenerbahçe - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Beşiktaş - " + skor + " // " + "Fenerbahçe - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Beşiktaş - " + skor + " // " + "Fenerbahçe - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 2)
+                    {
+                        Console.WriteLine("Galatasaray - Adanaspor");
+                        Console.WriteLine("Bu  Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine("Galatasaray" + skor + " // " + "Adanaspor" + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine("Galatasaray" + skor + " // " + "Adanaspor" + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine("Galatasaray" + skor + " // " + "Adanaspor" + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 3)
+                    {
+                        Console.WriteLine("Galatasaray - Sivasspor");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Beşiktaş - " + skor + " // " + "Sivasspor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Beşiktaş - " + skor + " // " + "Sivasspor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Beşiktaş - " + skor + " // " + "Sivasspor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 4)
+                    {
+                        Console.WriteLine("Beşiktaş - Galatasaray");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Beşiktaş - " + skor + " // " + "Galatasaray -  " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Beşiktaş - " + skor + " // " + "Galatasaray- " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Beşiktaş - " + skor + " // " + "Galatasaray - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 5)
+                    {
+                        Console.WriteLine("Beşiktaş - Trabzonspor");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Beşiktaş - " + skor + " // " + "Trabzonspor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Beşiktaş - " + skor + " // " + "Trabzospor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Beşiktaş - " + skor + " // " + "Trabzonspor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                else if (kulüp_seçim == 4) 
+                {
+                    Console.WriteLine("1) Sivasspor - Fenerbahçe ");
+                    Console.WriteLine("2) Sivasspor - Adanaspor ");
+                    Console.WriteLine("3) Sivasspor - Beşiktaş ");
+                    Console.WriteLine("4) Sivasspor - Galatasaray ");
+                    Console.WriteLine("5) Sivasspor - Trabzonspor ");
+
+                    Console.WriteLine("Lütfen Oynamak İstediğiniz Maçı Seçiniz");
+                    int maç_seçimi = int.Parse(Console.ReadLine());
+
+                    if (maç_seçimi == 1)
+                    {
+                        Console.WriteLine("Sivasspor - Fenerbahçe");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Sivasspor - " + skor + " // " + "Fenerbahçe - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Sivasspor - " + skor + " // " + "Fenerbahçe - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Sivasspor - " + skor + " // " + "Fenerbahçe - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 2)
+                    {
+                        Console.WriteLine("Sivasspor - Adanaspor");
+                        Console.WriteLine("Bu  Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine("Sivasspor" + skor + " // " + "Adanaspor" + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine("Sivasspor" + skor + " // " + "Adanaspor" + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine("Sivasspor" + skor + " // " + "Adanaspor" + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 3)
+                    {
+                        Console.WriteLine("Sivasspor - Beşiktaş");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Sivasspor - " + skor + " // " + "Beşiktaş - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Sivasspor - " + skor + " // " + "Beşiktaş - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Sivasspor - " + skor + " // " + "Beşiktaş - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 4)
+                    {
+                        Console.WriteLine("Sivasspor - Galatasaray");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Sivasspor - " + skor + " // " + "Galatasaray -  " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Sivasspor - " + skor + " // " + "Galatasaray- " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Sivasspor - " + skor + " // " + "Galatasaray - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 5)
+
+                    {
+                        Console.WriteLine("Sivasspor - Trabzonspor");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Sivasspor - " + skor + " // " + "Trabzonspor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Sivasspor - " + skor + " // " + "Trabzospor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Sivasspor - " + skor + " // " + "Trabzonspor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                else if (kulüp_seçim == 5) 
+                {
+                    Console.WriteLine("1) Trabzonspor - Fenerbahçe ");
+                    Console.WriteLine("2) Trabzonspor - Sivasspor ");
+                    Console.WriteLine("3) Trabzonspor - Beşiktaş ");
+                    Console.WriteLine("4) Trabzonspor - Galatasaray ");
+                    Console.WriteLine("5) Trabzonspor - Adanaspor ");
+
+                    Console.WriteLine("Lütfen Oynamak İstediğiniz Maçı Seçiniz");
+                    int maç_seçimi = int.Parse(Console.ReadLine());
+
+                    if (maç_seçimi == 1)
+                    {
+                        Console.WriteLine("Trabzonspor - Fenerbahçe");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Trabzonspor - " + skor + " // " + "Fenerbahçe - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Trabzonspor - " + skor + " // " + "Fenerbahçe - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Trabzonspor - " + skor + " // " + "Fenerbahçe - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 2)
+                    {
+                        Console.WriteLine("Trabzonspor - Sivasspor");
+                        Console.WriteLine("Bu  Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine("Trabzonspor" + skor + " // " + "Sivasspor" + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine("Trabzonspor" + skor + " // " + "Sivasspor" + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine("Trabzonspor" + skor + " // " + "Sivasspor" + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 3)
+                    {
+                        Console.WriteLine("Trabzonspor - Beşiktaş");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Trabzonspor - " + skor + " // " + "Beşiktaş - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Trabzonspor - " + skor + " // " + "Beşiktaş - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Trabzonspor - " + skor + " // " + "Beşiktaş - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 4)
+                    {
+                        Console.WriteLine("Trabzonspor - Galatasaray");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Trabzonspor - " + skor + " // " + "Galatasaray -  " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Trabzonspor - " + skor + " // " + "Galatasaray- " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Trabzonspor - " + skor + " // " + "Galatasaray - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 5)
+
+                    {
+                        Console.WriteLine("Trabzonspor - Adanaspor");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Trabzonspor - " + skor + " // " + "Adanaspor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Trabzonspor - " + skor + " // " + "Adanaspor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Trabzonspor - " + skor + " // " + "Adanaspor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                else if (kulüp_seçim ==  6 )
+                {
+                    Console.WriteLine("1) Adanaspor - Fenerbahçe ");
+                    Console.WriteLine("2) Adanaspor - Sivasspor ");
+                    Console.WriteLine("3) Adanaspor - Beşiktaş ");
+                    Console.WriteLine("4) Adanaspor - Galatasaray ");
+                    Console.WriteLine("5) Adanaspor - Trabzonspor ");
+
+                    Console.WriteLine("Lütfen Oynamak İstediğiniz Maçı Seçiniz");
+                    int maç_seçimi = int.Parse(Console.ReadLine());
+
+                    if (maç_seçimi == 1)
+                    {
+                        Console.WriteLine("Adanaspor - Fenerbahçe");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Adanaspor - " + skor + " // " + "Fenerbahçe - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Adanaspor - " + skor + " // " + "Fenerbahçe - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Adanaspor - " + skor + " // " + "Fenerbahçe - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 2)
+                    {
+                        Console.WriteLine("Adanaspor - Sivasspor");
+                        Console.WriteLine("Bu  Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine("Adanaspor" + skor + " // " + "Sivasspor" + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine("Adanaspor" + skor + " // " + "Sivasspor" + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine("Adanaspor" + skor + " // " + "Sivasspor" + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 3)
+                    {
+                        Console.WriteLine("Adanaspor - Beşiktaş");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Adanaspor - " + skor + " // " + "Beşiktaş - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Adanaspor - " + skor + " // " + "Beşiktaş - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Adanaspor - " + skor + " // " + "Beşiktaş - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 4)
+                    {
+                        Console.WriteLine("Adanaspor - Galatasaray");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Sivasspor - " + skor + " // " + "Galatasaray -  " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Adanaspor - " + skor + " // " + "Galatasaray- " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Adanaspor - " + skor + " // " + "Galatasaray - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+
+                    else if (maç_seçimi == 5)
+
+                    {
+                        Console.WriteLine("Adanaspor - Trabzonspor");
+                        Console.WriteLine("Bu İki Maçı Seçtiniz.");
+                        Console.WriteLine("Lütfen Bir Tahminde Bulununuz.");
+
+                        Console.WriteLine("Ev Sahibi Kazanır Tahmininde Bulunmak İçin -1- e Basınız.");
+                        Console.WriteLine("Deplasman Kazanır Tahmininde Bulunmak İçin -2- ye Basınız.");
+                        Console.WriteLine("Beraberlik İçin -3- e Basınız...");
+
+                        int seçim = int.Parse(Console.ReadLine());
+
+                        if (seçim == 1)
+                        {
+                            Console.WriteLine("Ev Sahibi Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Adanaspor - " + skor + " // " + "Trabzonspor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 2)
+                        {
+                            Console.WriteLine("Deplasman Takım Kazanır. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Adanaspor - " + skor + " // " + "Trabzospor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Rakip Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tahminiz Tutmadı. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+
+                        else if (seçim == 3)
+                        {
+                            Console.WriteLine("Berabere Biter. Tahmininde Bulundunuz.. ");
+                            Console.WriteLine("------------------------------------------");
+                            Console.WriteLine("Maç Sonucu; ");
+                            Console.WriteLine(" Adanaspor - " + skor + " // " + "Trabzonspor - " + skor2);
+
+                            if (skor > skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Ev Sahibi Takım Kazandı");
+                                break;
+                            }
+                            else if (skor < skor2)
+                            {
+                                Console.WriteLine("Tahmininiz Tutmadı. Deplasman Takım Kazandı ");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Tebrikler, Tahmininiz Tuttu. Maç Berabere Bitti. ");
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
